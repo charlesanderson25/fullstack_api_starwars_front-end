@@ -5,28 +5,27 @@ import React, { useState } from "react";
 //   name: string;
 //   height: string;
 //   mass: string;
-//   hair_color: string;
-//   skin_color: string;
+//   // ... outros campos que você espera receber
 // }
 
 // const SearchCharacter: React.FC = () => {
 //   const [procuraPersonagem, setProcuraPersonagem] = useState("");
-//   const [resultadoProcuraPersonagem, setResultadoProcuraPersonagem] = useState(
-//     []
-//   );
+//   const [resultadoProcuraPersonagem, setResultadoProcuraPersonagem] = useState<
+//     Personagem[]
+//   >([]);
 
 //   const Search = async () => {
 //     try {
 //       const response = await api.get(`/people/search/${procuraPersonagem}`);
-//       console.log("Resultados da pesquisa:", response.data);
-//       setResultadoProcuraPersonagem(response.data);
+//       console.log(response.data); // Verifique o que é retornado aqui
+//       setResultadoProcuraPersonagem(response.data.results); // Usar response.data.results
 //     } catch (error) {
 //       console.error("Erro na procura", error);
 //     }
 //   };
 
 //   return (
-//     <div className="bg-gray-900 p-6 sm:p-8 md:p-12 lg:p-16">
+//     <div className="bg-gray-900 p-6 sm:p-8 md:p-12 lg:p-16 border border-red-500">
 //       <form
 //         onSubmit={(e) => {
 //           e.preventDefault();
@@ -49,12 +48,16 @@ import React, { useState } from "react";
 //         </button>
 //       </form>
 //       {/* Renderize os resultados da pesquisa aqui */}
-//       {resultadoProcuraPersonagem.map((personagem, index) => (
-//         <div key={index} className="bg-white p-4 m-2 rounded-md">
-//           <h3>{personagem.name}</h3>
-//           {/* Outras informações do personagem */}
-//         </div>
-//       ))}
+//       <div>
+//         {resultadoProcuraPersonagem.map((personagem, index) => (
+//           <div key={index}>
+//             <h2>{personagem.name}</h2>
+//             <p>Altura: {personagem.height}</p>
+//             <p>Peso: {personagem.mass}</p>
+//             {/* Outras informações que você deseja mostrar */}
+//           </div>
+//         ))}
+//       </div>
 //     </div>
 //   );
 // };
@@ -74,7 +77,39 @@ const SearchCharacter: React.FC = () => {
     Personagem[]
   >([]);
 
-  const Search = async () => {
+  const containerStyle = {
+    backgroundColor: "#1a202c",
+    padding: "1.5rem 2rem",
+  };
+
+  const formStyle = {
+    display: "flex",
+  };
+
+  const inputStyle = {
+    width: "100%",
+    backgroundColor: "#2d3748",
+    color: "white",
+    padding: "0.75rem",
+    borderRadius: "0.25rem 0 0 0.25rem",
+    border: "none",
+  };
+
+  const buttonStyle = {
+    backgroundColor: "#f9004d",
+    hoverBackgroundColor: "#ffcdb8",
+    color: "white",
+    padding: "0.75rem 1rem",
+    borderRadius: "0 0.25rem 0.25rem 0",
+    cursor: "pointer",
+    border: "none",
+  };
+
+  const resultStyle = {
+    marginTop: "1rem",
+  };
+
+  const search = async () => {
     try {
       const response = await api.get(`/people/search/${procuraPersonagem}`);
       console.log(response.data); // Verifique o que é retornado aqui
@@ -85,35 +120,31 @@ const SearchCharacter: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-900 p-6 sm:p-8 md:p-12 lg:p-16">
+    <div style={containerStyle}>
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          Search();
+          search();
         }}
-        className="flex"
+        style={formStyle}
       >
         <input
-          className="w-full bg-gray-800 text-white p-3 rounded-l-md"
+          style={inputStyle}
           type="text"
           placeholder="Pesquisar personagens de Star Wars"
           value={procuraPersonagem}
           onChange={(e) => setProcuraPersonagem(e.target.value)}
         />
-        <button
-          type="submit"
-          className="bg-f9004d hover:bg-ffcdb8 text-white p-3 rounded-r-md cursor-pointer"
-        >
+        <button type="submit" style={buttonStyle}>
           Pesquisar
         </button>
       </form>
-      {/* Renderize os resultados da pesquisa aqui */}
-      <div>
+      <div style={resultStyle}>
         {resultadoProcuraPersonagem.map((personagem, index) => (
           <div key={index}>
-            <h2>{personagem.name}</h2>
-            <p>Altura: {personagem.height}</p>
-            <p>Peso: {personagem.mass}</p>
+            <h2 style={{ color: "white" }}>{personagem.name}</h2>
+            <p style={{ color: "white" }}>Altura: {personagem.height}</p>
+            <p style={{ color: "white" }}>Peso: {personagem.mass}</p>
             {/* Outras informações que você deseja mostrar */}
           </div>
         ))}
