@@ -76,6 +76,7 @@ const SearchCharacter: React.FC = () => {
   const [resultadoProcuraPersonagem, setResultadoProcuraPersonagem] = useState<
     Personagem[]
   >([]);
+  const [favoritos, setFavoritos] = useState<string[]>([]);
 
   const containerStyle = {
     backgroundColor: "#1a202c",
@@ -119,6 +120,14 @@ const SearchCharacter: React.FC = () => {
     }
   };
 
+  const alteraFavoritos = (personagemId: string) => {
+    if (favoritos.includes(personagemId)) {
+      setFavoritos(favoritos.filter((id) => id !== personagemId));
+    } else {
+      setFavoritos([...favoritos, personagemId]);
+    }
+  };
+
   return (
     <div style={containerStyle}>
       <form
@@ -146,6 +155,16 @@ const SearchCharacter: React.FC = () => {
             <p style={{ color: "white" }}>Altura: {personagem.height}</p>
             <p style={{ color: "white" }}>Peso: {personagem.mass}</p>
             {/* Outras informações que você deseja mostrar */}
+            <button
+              style={{
+                backgroundColor: favoritos.includes(personagem.name)
+                  ? "yellow"
+                  : "white",
+              }}
+              onClick={() => alteraFavoritos(personagem.name)}
+            >
+              Adicionar aos Favoritos
+            </button>
           </div>
         ))}
       </div>
