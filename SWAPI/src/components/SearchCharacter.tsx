@@ -50,8 +50,8 @@ const SearchCharacter: React.FC = () => {
   const search = async () => {
     try {
       const response = await api.get(`/people/search/${procuraPersonagem}`);
-      console.log(response.data); // Verifique o que é retornado aqui
-      setResultadoProcuraPersonagem(response.data.results); // Usar response.data.results
+      console.log(response.data);
+      setResultadoProcuraPersonagem(response.data.results);
     } catch (error) {
       console.error("Erro na procura", error);
     }
