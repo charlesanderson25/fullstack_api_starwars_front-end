@@ -26,7 +26,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
   const buttonStyle = {
     backgroundColor: "#f9004d",
-    hoverBackgroundColor: "#ffcdb8",
     color: "white",
     padding: "0.75rem 1rem",
     borderRadius: "0.25rem",
@@ -42,7 +41,7 @@ const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
     <button
       style={buttonStyle}
       onMouseEnter={(e) => Object.assign(e.currentTarget.style, hoverStyle)}
-      onMouseLeave={(e) => Object.assign(e.currentTarget.style, {})}
+      onMouseLeave={(e) => Object.assign(e.currentTarget.style, buttonStyle)}
       {...rest}
     >
       {children}
