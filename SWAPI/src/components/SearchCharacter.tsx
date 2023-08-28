@@ -106,7 +106,11 @@ const SearchCharacter: React.FC = () => {
         ))}
       </div>
       <div style={{ marginTop: "2rem" }}>
-        <h2 style={{ color: "#f9004d" }}>Favoritos</h2>
+        <h2
+          style={{ color: "#f9004d", fontFamily: "Josefin Sans, sans-serif" }}
+        >
+          Favoritos
+        </h2>
         <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
           {favoritos.map((personagemId) => (
             <li
