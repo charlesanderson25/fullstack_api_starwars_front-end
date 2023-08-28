@@ -1,5 +1,6 @@
 import api from "../api";
 import React, { useState } from "react";
+import Button from "./Button";
 
 interface Personagem {
   name: string;
@@ -92,16 +93,16 @@ const SearchCharacter: React.FC = () => {
             <p style={{ color: "white" }}>Altura: {personagem.height}</p>
             <p style={{ color: "white" }}>Peso: {personagem.mass}</p>
             {/* Outras informações que você deseja mostrar */}
-            <button
-              style={{
-                backgroundColor: favoritos.includes(personagem.name)
-                  ? "yellow"
-                  : "white",
-              }}
+            <Button
+              // style={{
+              //   backgroundColor: favoritos.includes(personagem.name)
+              //     ? "red"
+              //     : "white",
+              // }}
               onClick={() => alteraFavoritos(personagem.name)}
             >
               Adicionar aos Favoritos
-            </button>
+            </Button>
           </div>
         ))}
       </div>
