@@ -106,10 +106,13 @@ const SearchCharacter: React.FC = () => {
         ))}
       </div>
       <div style={{ marginTop: "2rem" }}>
-        <h2 style={{ color: "white" }}>Favoritos</h2>
+        <h2 style={{ color: "#f9004d" }}>Favoritos</h2>
         <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
           {favoritos.map((personagemId) => (
-            <li key={personagemId} style={{ marginBottom: "0.5rem" }}>
+            <li
+              key={personagemId}
+              style={{ marginBottom: "0.5rem", color: "white" }}
+            >
               {personagemId}
             </li>
           ))}
