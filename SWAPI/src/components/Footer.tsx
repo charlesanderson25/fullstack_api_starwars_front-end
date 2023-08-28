@@ -6,6 +6,10 @@ const Footer: React.FC = () => {
     padding: "1.5rem 2rem",
     color: "white",
     // textAlign: "center",
+    display: "flex",
+    justifyContent: "center", // Centraliza horizontalmente
+    alignItems: "center", // Centraliza verticalmente
+    minHeight: "10px", // Define uma altura mínima para o footer
   };
 
   const titleStyle = {
