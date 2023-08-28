@@ -82,9 +82,9 @@ const SearchCharacter: React.FC = () => {
           value={procuraPersonagem}
           onChange={(e) => setProcuraPersonagem(e.target.value)}
         />
-        <button type="submit" style={buttonStyle}>
+        <Button type="submit" style={buttonStyle}>
           Pesquisar
-        </button>
+        </Button>
       </form>
       <div style={resultStyle}>
         {resultadoProcuraPersonagem.map((personagem, index) => (
