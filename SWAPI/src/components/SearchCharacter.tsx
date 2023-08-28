@@ -8,6 +8,12 @@ interface Personagem {
   mass: string;
 }
 
+const textSearchCharacter = {
+  buttonPesquisar: "Pesquisar",
+  buttonAdicionarFavoritos: "Adicionar aos Favoritos",
+  h2: "Favoritos",
+};
+
 const SearchCharacter: React.FC = () => {
   const [procuraPersonagem, setProcuraPersonagem] = useState("");
   const [resultadoProcuraPersonagem, setResultadoProcuraPersonagem] = useState<
@@ -82,7 +88,7 @@ const SearchCharacter: React.FC = () => {
           onChange={(e) => setProcuraPersonagem(e.target.value)}
         />
         <Button type="submit" style={buttonStyle}>
-          Pesquisar
+          {textSearchCharacter.buttonPesquisar}
         </Button>
       </form>
       <div style={resultStyle}>
@@ -93,7 +99,7 @@ const SearchCharacter: React.FC = () => {
             <p style={{ color: "white" }}>Peso: {personagem.mass}</p>
 
             <Button onClick={() => alteraFavoritos(personagem.name)}>
-              Adicionar aos Favoritos
+              {textSearchCharacter.buttonAdicionarFavoritos}
             </Button>
           </div>
         ))}
@@ -102,7 +108,7 @@ const SearchCharacter: React.FC = () => {
         <h2
           style={{ color: "#f9004d", fontFamily: "Josefin Sans, sans-serif" }}
         >
-          Favoritos
+          {textSearchCharacter.h2}
         </h2>
         <ul
           style={{
