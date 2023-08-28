@@ -6,7 +6,6 @@ interface Personagem {
   name: string;
   height: string;
   mass: string;
-  // ... outros campos que você espera receber
 }
 
 const SearchCharacter: React.FC = () => {
@@ -92,7 +91,7 @@ const SearchCharacter: React.FC = () => {
             <h2 style={{ color: "white" }}>{personagem.name}</h2>
             <p style={{ color: "white" }}>Altura: {personagem.height}</p>
             <p style={{ color: "white" }}>Peso: {personagem.mass}</p>
-            {/* Outras informações que você deseja mostrar */}
+
             <Button
               // style={{
               //   backgroundColor: favoritos.includes(personagem.name)
