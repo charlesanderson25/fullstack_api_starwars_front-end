@@ -92,14 +92,7 @@ const SearchCharacter: React.FC = () => {
             <p style={{ color: "white" }}>Altura: {personagem.height}</p>
             <p style={{ color: "white" }}>Peso: {personagem.mass}</p>
 
-            <Button
-              // style={{
-              //   backgroundColor: favoritos.includes(personagem.name)
-              //     ? "red"
-              //     : "white",
-              // }}
-              onClick={() => alteraFavoritos(personagem.name)}
-            >
+            <Button onClick={() => alteraFavoritos(personagem.name)}>
               Adicionar aos Favoritos
             </Button>
           </div>
