@@ -1,5 +1,9 @@
 import React from "react";
 
+const textFooter = {
+  h1: "Charles Anderson",
+};
+
 const Footer: React.FC = () => {
   const footerStyle = {
     backgroundColor: "#282828",
@@ -7,9 +11,9 @@ const Footer: React.FC = () => {
     color: "white",
     // textAlign: "center",
     display: "flex",
-    justifyContent: "center", // Centraliza horizontalmente
-    alignItems: "center", // Centraliza verticalmente
-    minHeight: "10px", // Define uma altura mínima para o footer
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "10px",
   };
 
   const titleStyle = {
@@ -22,7 +26,7 @@ const Footer: React.FC = () => {
 
   return (
     <div style={footerStyle}>
-      <h1 style={titleStyle}>Charles Anderson</h1>
+      <h1 style={titleStyle}>{textFooter.h1}</h1>
     </div>
   );
 };
