@@ -2,6 +2,11 @@ import { useState } from "react";
 import Button from "./Button";
 import SearchCharacter from "./SearchCharacter";
 
+const textLogin = {
+  btnLogout: "Logout",
+  btnLogin: "Login",
+};
+
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,7 +27,7 @@ const Login: React.FC = () => {
   if (isLoggedIn) {
     return (
       <div>
-        <Button onClick={checkLogout}>Logout</Button>
+        <Button onClick={checkLogout}>{textLogin.btnLogout}</Button>
         <SearchCharacter />
       </div>
     );
@@ -41,7 +46,7 @@ const Login: React.FC = () => {
           value={password}
           onChange={(pass) => setPassword(pass.target.value)}
         />
-        <Button onClick={checkLogin}>Login</Button>
+        <Button onClick={checkLogin}>{textLogin.btnLogin}</Button>
       </div>
     );
   }
