@@ -42,10 +42,10 @@ Você pode marcar o personagem como favorito clicando no botão "Adicionar aos F
 **Esse é um projeto React construído através do Vite utilizando a linguagem typescript. Após clonar, você pode abrir os diretórios no Visual Studio Code e executar os comandos descritos abaixo:
 
 Instalação dos módulos e dependências utilizadas no projeto, como o axios, por exemplo. 
-<br>npm install</br> 
+<br><strong>npm install</strong></br> 
 
 Executar o projeto com Vite, após esse comando o terminal irá exibir um endereço. Você deve clicar nesse endereço para abrir a interface do projeto, exemplo: Local: http://http://localhost:3000/
-<br>npm run dev</br>
+<br><strong>npm run dev</strong></br>
 **
 
 <h3 align="center"> Técnicas e Tecnologias Utilizadas </h3> 
