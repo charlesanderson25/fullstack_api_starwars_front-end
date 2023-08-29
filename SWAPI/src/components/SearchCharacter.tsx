@@ -13,6 +13,8 @@ const textSearchCharacter = {
   buttonPesquisar: "Pesquisar",
   buttonAdicionarFavoritos: "Adicionar aos Favoritos",
   h2: "Favoritos",
+  pHeight: "Altura:",
+  pWeight: "Peso:",
 };
 
 const SearchCharacter: React.FC = () => {
@@ -67,10 +69,10 @@ const SearchCharacter: React.FC = () => {
               {personagem.name}
             </h2>
             <p style={searchCharacterStyles.characterInfo}>
-              Altura: {personagem.height}
+              {textSearchCharacter.pHeight} {personagem.height}
             </p>
             <p style={searchCharacterStyles.characterInfo}>
-              Peso: {personagem.mass}
+              {textSearchCharacter.pWeight} {personagem.mass}
             </p>
 
             <Button onClick={() => alteraFavoritos(personagem.name)}>
