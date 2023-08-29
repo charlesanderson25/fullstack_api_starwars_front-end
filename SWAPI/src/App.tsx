@@ -1,12 +1,12 @@
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
-import SearchCharacter from "./components/SearchCharacter";
+import Login from "./components/Login";
 
 function App() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-400">
       <Banner />
-      <SearchCharacter />
+      <Login />
       <Footer />
     </div>
   );
