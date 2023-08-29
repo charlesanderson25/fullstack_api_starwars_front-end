@@ -13,7 +13,7 @@ Essa interface foi criada com React via Vite utilizando a linguagem Typescript.
 Tela de login, para efetuar o login utilize:
 
 E-mail: user@client.com
-Senha: password
+<br>Senha: password</br>
 
 ![Tela_Login](https://github.com/charlesanderson25/fullstack_api_starwars_front-end/assets/54293151/cb3fd615-ca7b-43f1-8f00-8400c910ab02)
 
