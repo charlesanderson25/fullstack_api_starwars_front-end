@@ -6,7 +6,9 @@
 
 Interface criada para que o usuário tenha acesso ao sistema de pesquisas de personagens do Star Wars, através de uma API criada e integrada à SWAPI (https://swapi.dev/).
 
-Essa interface foi criada com React via Vite utilizando a linguagem Typescript.
+Esse Readme trata apenas do Frontend, a aplicação também é composta de um sistema Backend. 
+
+Para instruções do backend siga para o diretório: https://github.com/charlesanderson25/fullstack_api_starwars.git
 
 # :hammer: Funcionalidades do projeto
 
