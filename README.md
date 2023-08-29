@@ -1,6 +1,8 @@
 <h1 align="center"> Pesquise seu personagem - Star Wars </h1>
 
-![Logo Star Wars](https://github.com/charlesanderson25/fullstack_api_starwars_front-end/assets/54293151/e17fad8d-91a7-457f-9d21-e77186889e8a)
+<p align="center">
+  <img src="https://github.com/charlesanderson25/fullstack_api_starwars/assets/54293151/942591ad-4868-437a-95f3-a77bda7ec752" alt="Imagem">
+</p>
 
 <h3 align="center"> Introdução </h3>
 
