@@ -27,21 +27,23 @@ const Login: React.FC = () => {
       </div>
     );
   } else {
-    <div>
-      <input
-        type="text"
-        placeholder="E-mail"
-        value={email}
-        onChange={(mail) => setEmail(mail.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Senha"
-        value={password}
-        onChange={(pass) => setPassword(pass.target.value)}
-      />
-      <Button onClick={checkLogin}>Login</Button>
-    </div>;
+    return (
+      <div>
+        <input
+          type="text"
+          placeholder="E-mail"
+          value={email}
+          onChange={(mail) => setEmail(mail.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Senha"
+          value={password}
+          onChange={(pass) => setPassword(pass.target.value)}
+        />
+        <Button onClick={checkLogin}>Login</Button>
+      </div>
+    );
   }
 };
 
