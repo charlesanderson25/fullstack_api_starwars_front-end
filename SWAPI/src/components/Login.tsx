@@ -7,6 +7,14 @@ const textLogin = {
   btnLogin: "Login",
 };
 
+const centerInputBtn: React.CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  height: "40vh",
+};
+
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,14 +34,14 @@ const Login: React.FC = () => {
 
   if (isLoggedIn) {
     return (
-      <div>
+      <div style={centerInputBtn}>
         <Button onClick={checkLogout}>{textLogin.btnLogout}</Button>
         <SearchCharacter />
       </div>
     );
   } else {
     return (
-      <div>
+      <div style={centerInputBtn}>
         <input
           type="text"
           placeholder="E-mail"
