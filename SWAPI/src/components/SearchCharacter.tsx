@@ -1,6 +1,7 @@
 import api from "../api";
 import React, { useState } from "react";
 import Button from "./Button";
+import searchCharacterStyles from "../searchCharacterStyles";
 
 interface Personagem {
   name: string;
@@ -21,37 +22,37 @@ const SearchCharacter: React.FC = () => {
   >([]);
   const [favoritos, setFavoritos] = useState<string[]>([]);
 
-  const containerStyle = {
-    backgroundColor: "#1a202c",
-    padding: "1.5rem 2rem",
-  };
+  // const containerStyle = {
+  //   backgroundColor: "#1a202c",
+  //   padding: "1.5rem 2rem",
+  // };
 
-  const formStyle = {
-    display: "flex",
-  };
+  // const formStyle = {
+  //   display: "flex",
+  // };
 
-  const inputStyle = {
-    width: "100%",
-    backgroundColor: "#2d3748",
-    color: "white",
-    padding: "0.75rem",
-    borderRadius: "0.25rem 0 0 0.25rem",
-    border: "none",
-  };
+  // const inputStyle = {
+  //   width: "100%",
+  //   backgroundColor: "#2d3748",
+  //   color: "white",
+  //   padding: "0.75rem",
+  //   borderRadius: "0.25rem 0 0 0.25rem",
+  //   border: "none",
+  // };
 
-  const buttonStyle = {
-    backgroundColor: "#f9004d",
-    hoverBackgroundColor: "#ffcdb8",
-    color: "white",
-    padding: "0.75rem 1rem",
-    borderRadius: "0 0.25rem 0.25rem 0",
-    cursor: "pointer",
-    border: "none",
-  };
+  // const buttonStyle = {
+  //   backgroundColor: "#f9004d",
+  //   hoverBackgroundColor: "#ffcdb8",
+  //   color: "white",
+  //   padding: "0.75rem 1rem",
+  //   borderRadius: "0 0.25rem 0.25rem 0",
+  //   cursor: "pointer",
+  //   border: "none",
+  // };
 
-  const resultStyle = {
-    marginTop: "1rem",
-  };
+  // const resultStyle = {
+  //   marginTop: "1rem",
+  // };
 
   const search = async () => {
     try {
@@ -72,31 +73,37 @@ const SearchCharacter: React.FC = () => {
   };
 
   return (
-    <div style={containerStyle}>
+    <div style={searchCharacterStyles.container}>
       <form
         onSubmit={(e) => {
           e.preventDefault();
           search();
         }}
-        style={formStyle}
+        style={searchCharacterStyles.form}
       >
         <input
-          style={inputStyle}
+          style={searchCharacterStyles.input}
           type="text"
           placeholder="Pesquisar personagens de Star Wars"
           value={procuraPersonagem}
           onChange={(e) => setProcuraPersonagem(e.target.value)}
         />
-        <Button type="submit" style={buttonStyle}>
+        <Button type="submit" style={searchCharacterStyles.button}>
           {textSearchCharacter.buttonPesquisar}
         </Button>
       </form>
-      <div style={resultStyle}>
+      <div style={searchCharacterStyles.result}>
         {resultadoProcuraPersonagem.map((personagem, index) => (
           <div key={index}>
-            <h2 style={{ color: "white" }}>{personagem.name}</h2>
-            <p style={{ color: "white" }}>Altura: {personagem.height}</p>
-            <p style={{ color: "white" }}>Peso: {personagem.mass}</p>
+            <h2 style={searchCharacterStyles.characterInfo}>
+              {personagem.name}
+            </h2>
+            <p style={searchCharacterStyles.characterInfo}>
+              Altura: {personagem.height}
+            </p>
+            <p style={searchCharacterStyles.characterInfo}>
+              Peso: {personagem.mass}
+            </p>
 
             <Button onClick={() => alteraFavoritos(personagem.name)}>
               {textSearchCharacter.buttonAdicionarFavoritos}
@@ -104,26 +111,13 @@ const SearchCharacter: React.FC = () => {
           </div>
         ))}
       </div>
-      <div style={{ marginTop: "2rem" }}>
-        <h2
-          style={{ color: "#f9004d", fontFamily: "Josefin Sans, sans-serif" }}
-        >
+      <div style={searchCharacterStyles.favorites}>
+        <h2 style={searchCharacterStyles.favorites}>
           {textSearchCharacter.h2}
         </h2>
-        <ul
-          style={{
-            listStyleType: "none",
-            paddingLeft: 0,
-          }}
-        >
+        <ul style={searchCharacterStyles.favoritesList}>
           {favoritos.map((personagemId) => (
-            <li
-              key={personagemId}
-              style={{
-                marginBottom: "0.5rem",
-                color: "white",
-              }}
-            >
+            <li key={personagemId} style={searchCharacterStyles.favoriteItem}>
               {personagemId}
             </li>
           ))}
