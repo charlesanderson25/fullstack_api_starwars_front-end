@@ -22,38 +22,6 @@ const SearchCharacter: React.FC = () => {
   >([]);
   const [favoritos, setFavoritos] = useState<string[]>([]);
 
-  // const containerStyle = {
-  //   backgroundColor: "#1a202c",
-  //   padding: "1.5rem 2rem",
-  // };
-
-  // const formStyle = {
-  //   display: "flex",
-  // };
-
-  // const inputStyle = {
-  //   width: "100%",
-  //   backgroundColor: "#2d3748",
-  //   color: "white",
-  //   padding: "0.75rem",
-  //   borderRadius: "0.25rem 0 0 0.25rem",
-  //   border: "none",
-  // };
-
-  // const buttonStyle = {
-  //   backgroundColor: "#f9004d",
-  //   hoverBackgroundColor: "#ffcdb8",
-  //   color: "white",
-  //   padding: "0.75rem 1rem",
-  //   borderRadius: "0 0.25rem 0.25rem 0",
-  //   cursor: "pointer",
-  //   border: "none",
-  // };
-
-  // const resultStyle = {
-  //   marginTop: "1rem",
-  // };
-
   const search = async () => {
     try {
       const response = await api.get(`/people/search/${procuraPersonagem}`);
